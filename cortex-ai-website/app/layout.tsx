@@ -1,7 +1,6 @@
 "use client"
-import { ChakraProvider } from "@chakra-ui/react"
+import { ChakraProvider, background, Box } from "@chakra-ui/react"
 import Navbar from "@/components/Navbar"
-
 import { Children } from "react"
 
 
@@ -18,7 +17,10 @@ export default function RootLayout({children}: {
       <body>
         <ChakraProvider>
           <Navbar />
+          <Box backgroundColor={'gray.800'}>
           {children}
+          </Box>
+          
 
           
         </ChakraProvider>
