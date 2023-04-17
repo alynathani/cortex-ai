@@ -57,7 +57,7 @@ export default function WithSubnavigation() {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
-              <Link href='/'><img style={{height: '40px'}} src='NavBarLogo.png'></img></Link>
+              <Link href='/'><img style={{height: '40px'}} src='./NavBarLogo.png'></img></Link>
               
           </Text>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
