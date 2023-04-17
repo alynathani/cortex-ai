@@ -6,6 +6,7 @@ import {
   Heading,
   Text,
   Button,
+  Link,
   Image,
   Icon,
   IconButton,
@@ -45,15 +46,19 @@ export default function HeroSection() {
           <Stack
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: 'column', sm: 'row' }}>
-            <Button
+              <Link href='/browse'>
+              <Button
 
               rounded={'full'}
               size={'lg'}
               fontWeight={{ base: '900', lg: '700' }}
               variant={'solid'}
-              px={6}
-              bg={'green.400'}
+              px={10}
+              bg={'green.200'}
               colorScheme={'green'}
+              width={'full'}
+              
+              
 
 
               height={{ base: '50px' }}
@@ -61,8 +66,22 @@ export default function HeroSection() {
               color={'black'}
 
               _hover={{ bg: 'green.500' }}>
-              Browse Tools
+                
+                Browse
+                
+                
+              <Image src="./icons/search.png"
+              height={'50%'}
+              marginLeft={'10px'}
+              ></Image>
+
+
             </Button>
+              
+              </Link>
+            
+              
+            
             <Button
               height={{ base: '50px' }}
               rounded={'full'}
@@ -70,7 +89,7 @@ export default function HeroSection() {
               colorScheme={'blue'}
               fontSize={'20px'}
               color={'black'}
-              bg={'blue.400'}
+              bg={'blue.200'}
 
               fontWeight={{ base: '600', lg: '600' }}
               px={6}
@@ -78,10 +97,13 @@ export default function HeroSection() {
               _hover={{ bg: 'blue.500' }}>
 
               Cortex Rankings
+              <Image src="./icons/ranking.png"
+              height={'50%'}
+              marginLeft={'10px'}></Image>
             </Button>
           </Stack>
         </Stack>
-        <Flex
+        <Stack
           flex={1}
           justify={'center'}
           align={'center'}
@@ -96,20 +118,36 @@ export default function HeroSection() {
             width={'full'}
             overflow={'hidden'}
             bg={'gray.700'}>
-            <Text
+              <Box>
+
+            <Stack>
+              <Box
+              display={'flex'}
+              alignSelf={'center'}
+              >
+              <Text
               textAlign={'center'}
-              color={'white'}
+              color={'white'} 
               pt={4}
               fontSize={{ base: '25px', lg: '30px' }}
               fontWeight={'500'}
               textDecorationLine={'true'}
               letterSpacing={'-1px'}>
-              Tools of the Week:
+              Tools of the Week
             </Text>
+            <Image src="./icons/star.png"
+            marginTop={{base:'15px', lg:'20px'}}
+            
+              height={'40px'}
+              marginLeft={'15px'}
+              ></Image>
+
+              </Box>
+            
             <Text
               textAlign={'center'}
               color={'white'}
-              pt={4}
+              pt={1}
               fontSize={{ base: '25px', lg: '30px' }}
               fontWeight={'bold'}
               textDecorationLine={'true'}
@@ -118,9 +156,46 @@ export default function HeroSection() {
               #2: Google Bard <br />
               #3: MidJourney
             </Text>
+            <Button
+              
+              width={{base:'40%', lg: '20%'}}
+              alignSelf={'center'}
 
+              rounded={'full'}
+              
+              fontWeight={{ base: '900', lg: '700' }}
+              variant={'solid'}
+             
+              bg={'white'}
+              
+              
+             
+
+
+              height={{ base: '40px' }}
+              fontSize={{base:'15px'}}
+              color={'black'}
+
+              _hover={{ bg: 'green.500' }}>
+              Guides
+              <Image src="./icons/user-guide.png"
+              height={'50%'}
+              marginLeft={'10px'}
+              ></Image>
+              
+
+
+            </Button>
+
+            </Stack>
+            
+            
+            
+            
+            </Box>
+            
           </Box>
-        </Flex>
+        </Stack>
       </Stack>
     </Container>
   );
@@ -132,17 +207,20 @@ const Slogan = () => {
     <>
       <Flex
         align={'center'}
+        
       >
         <Text
           fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
           color={"white"}
           as={'span'}
           position={'relative'}
+          
         >
           Work Smart
-
         </Text>
         <Image
+        boxShadow={'2xl'}
+        
 
           w={{ base: '14%', md: '20%', lg: '15%' }}
           h={{ base: '14%', md: '20%', lg: '15%' }}
