@@ -7,7 +7,7 @@ import { GetServerSideProps, GetStaticProps } from 'next'
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 async function getTools() {
-  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`)
+  const res = await fetch(`${`http://cortex-ai-git-developing-alynathani.vercel.app`}/api/getCategories`)
   return res.json();
   
 }
