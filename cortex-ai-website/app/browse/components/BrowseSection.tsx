@@ -1,3 +1,4 @@
+
 import {
     Container,
     Stack,
@@ -18,9 +19,10 @@ import {
     textDecoration,
 
 } from '@chakra-ui/react';
+import { log } from 'console';
 import { color } from 'framer-motion';
-
 import { Margarine } from 'next/font/google';
+
 
 
 export default function BrowseSection() {
