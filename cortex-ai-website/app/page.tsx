@@ -25,9 +25,10 @@ export default async function Home() {
     <>
     <HeroSection />
     <h1>Hi</h1>
-    {data.map((tool) => (
+  
+    {/*{data.map((tool) => (
       <h1 style={{color: "white"}} >{tool.name}</h1>
-    ))}
+    ))}*/}
      
      
     </>
