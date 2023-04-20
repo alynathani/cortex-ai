@@ -1,4 +1,4 @@
-
+"use client"
 import {
     Container,
     Stack,
@@ -20,49 +20,72 @@ import {
 
 } from '@chakra-ui/react';
 import { log } from 'console';
-import { color } from 'framer-motion';
 import { Margarine } from 'next/font/google';
+interface CategoryProps {
+    data: {
+        id: number,
+        name: string
+    }[]
+}
 
 
-
-export default function BrowseSection() {
+export default function BrowseSection({data}: CategoryProps){
+    
+    
+    
     return (
         <>
-            <Flex
-            justifyContent={'center'}>
-            <Text
-                color={'white'}
-                fontSize={{ base: '30px', lg:'50px' }}
-                marginBottom={'40px'}
-                textAlign={'center'}
-                fontWeight={700}>
-                Tool Categories
-                
-            </Text>
-            <Image src="./icons/folder.png"
-              height={{base:'40px',  lg: '50px'}}
-              marginLeft={{base: '10px' ,lg: '20px'}}
-              marginTop={{base: '2px', lg: '15px'}}
-              ></Image>
-
-            </Flex>
+            <TitleSection />
             
-            <CategoryCardSection />
+            
+            <CategoryCardSection data={data} />
+
+            
             
         </>
     )
 }
 
-function CategoryCardSection() {
+function TitleSection() {
+    return(
+        <Flex
+        justifyContent={'center'}>
+        <Text
+            color={'white'}
+            fontSize={{ base: '30px', lg:'50px' }}
+            marginBottom={'40px'}
+            textAlign={'center'}
+            fontWeight={700}>
+            Tool Categories
+            
+        </Text>
+        <Image src="./icons/folder.png"
+          height={{base:'40px',  lg: '50px'}}
+          marginLeft={{base: '10px' ,lg: '20px'}}
+          marginTop={{base: '2px', lg: '15px'}}
+          ></Image>
+
+        </Flex>
+    )
+   
+
+}
+
+function CategoryCardSection({data}: CategoryProps) {
+    
     return (
         <>
         <SimpleGrid spacing={{base: '50px' ,lg: '100px'}} templateColumns='repeat(auto-fill, minmax(300px, 1fr))'>
-    <CategoryCard />
-    <CategoryCard />
-    <CategoryCard />
-    <CategoryCard />
-    <CategoryCard />
-    <CategoryCard />
+    
+        {data.map((category) => (
+            <div key={category.id}>
+                <CategoryCard name = {category.name}/>
+            </div>
+                
+            ))}
+    
+    
+    
 
 </SimpleGrid>
             
@@ -70,7 +93,13 @@ function CategoryCardSection() {
     )
 }
 
-function CategoryCard() {
+interface Name{
+    name: string
+}
+
+
+function CategoryCard({name}:Name) {
+    
     return (
         <Card
         rounded={'20px'}
@@ -79,7 +108,7 @@ function CategoryCard() {
         
         bg={'white'}>
         <CardHeader>
-            <Heading size='md'> Category Name</Heading>
+            <Heading size='md'>{name}</Heading>
         </CardHeader>
         <CardBody
         >
