@@ -48,12 +48,12 @@ export default async function Home() {
   )
 }
 
-interface Test{
+export interface Test{
   blah: string
 }
 
 async function getCategories() {
-  const res = await fetch("http://localhost:3000/api/getCategories", { cache: 'no-store'})
+  const res = await fetch("https://cortex-ai-git-backenddev-alynathani.vercel.app/3000/api/getCategories", { cache: 'no-store'})
   if (!res.ok) {
       console.log(res);
   }
