@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import HeroSection from "@/components/HeroSection"
-import HeroSectionV2 from "@/components/HeroSectionV2"
 import { GetServerSideProps, GetStaticProps } from 'next'
 import { useRouter } from 'next/router';
 import BrowseSection from "./components/BrowseSection"
@@ -26,34 +25,26 @@ import {
 import { Margarine } from 'next/font/google';
 import Head from 'next/head'
 
-
-
 export const metadata = {
   title: 'Cortex AI - Browse'
 }
 
 export default async function Home() {
   const data = await getCategories()
-  console.log("page:");
-  
+  console.log("Category Data:");
   console.log(data);
   
   return (
     
     <div style={{padding: "50px"}}>
     <BrowseSection data={data}/>
-   
-
     </div>
   )
 }
 
-export interface Test{
-  blah: string
-}
 
 async function getCategories() {
-  const res = await fetch("https://cortex-ai-git-backenddev-alynathani.vercel.app/3000/api/getCategories", { cache: 'no-store'})
+  const res = await fetch("http://localhost:3000/api/getCategories", { cache: 'no-store'})
   if (!res.ok) {
       console.log(res);
   }
