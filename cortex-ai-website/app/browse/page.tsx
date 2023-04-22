@@ -1,5 +1,4 @@
 import BrowseSection from "./components/BrowseSection"
-import prisma from "../../lib/prisma";
 import { PrismaClient } from "@prisma/client";
 
 export const metadata = {
@@ -23,6 +22,7 @@ async function getCategories():Promise<categoryListProps> {
 
 
 export default async function Home() {
+  const prisma = new PrismaClient()
   const categoryList = await prisma.category.findMany()
   console.log("Category Data:");
   console.log(categoryList);
