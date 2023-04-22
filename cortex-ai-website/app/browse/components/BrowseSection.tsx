@@ -21,19 +21,21 @@ import {
 } from '@chakra-ui/react';
 import { log } from 'console';
 import { Margarine } from 'next/font/google';
-interface CategoryProps {
-    data: {
-        id: number,
-        name: string
-    }[]
+
+type categoryListProps = {
+    categoryList: categoryProps[]
+  }
+
+type categoryProps = {
+    id: number,
+    name: string
 }
 
-
-export default function BrowseSection({ data }: CategoryProps) {
+export default function BrowseSection( {categoryList} : categoryListProps ) {
     return (
         <>
             <TitleSection />
-            <CategoryCardSection data={data} />
+            <CategoryCardSection categoryList={categoryList} />
         </>
     )
 }
@@ -59,13 +61,13 @@ function TitleSection() {
     )
 }
 
-function CategoryCardSection({ data }: CategoryProps) {
+function CategoryCardSection({ categoryList }: categoryListProps) {
     return (
         <>
             <SimpleGrid spacing={{ base: '50px', lg: '100px' }} templateColumns='repeat(auto-fill, minmax(300px, 1fr))'>
-                {data.map((category) => (
+                {categoryList.map((category) => (
                     <div key={category.id}>
-                        <CategoryCard name={category.name} />
+                        <CategoryCard id ={category.id} name={category.name} />
                     </div>
                 ))}
             </SimpleGrid>
@@ -73,11 +75,7 @@ function CategoryCardSection({ data }: CategoryProps) {
     )
 }
 
-interface Name {
-    name: string
-}
-
-function CategoryCard({ name }: Name) {
+function CategoryCard({id, name}: categoryProps) {
     return (
         <Card
             rounded={'20px'}
