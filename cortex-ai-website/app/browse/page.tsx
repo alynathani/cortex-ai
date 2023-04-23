@@ -9,6 +9,7 @@ type categoryListProps = {
   name: string
 }[]
 
+/*
 async function getCategories():Promise<categoryListProps> {
   const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, { cache: 'no-store'})
   if (!res.ok) {
@@ -16,6 +17,7 @@ async function getCategories():Promise<categoryListProps> {
   }
   return res.json()
 }
+*/
 
 
 export default async function Home() {
