@@ -12,7 +12,7 @@ type categoryListProps = {
 
 
 async function getCategories():Promise<categoryListProps> {
-  const res = await fetch(`https://cortex-ai-git-developing-alynathani.vercel.app/api/getCategories`, { cache: 'no-store'})
+  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, { cache: 'no-store'})
   if (!res.ok) {
       console.log(res);
   }
