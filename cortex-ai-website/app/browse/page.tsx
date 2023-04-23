@@ -1,6 +1,4 @@
 import BrowseSection from "./components/BrowseSection"
-import prisma from "../../lib/prisma";
-import { PrismaClient } from "@prisma/client";
 
 export const metadata = {
   title: 'Cortex AI - Browse'
@@ -13,7 +11,7 @@ type categoryListProps = {
 
 /*
 async function getCategories():Promise<categoryListProps> {
-  const res = await prisma.category.findMany()
+  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, { cache: 'no-store'})
   if (!res.ok) {
       console.log(res);
   }
@@ -23,7 +21,8 @@ async function getCategories():Promise<categoryListProps> {
 
 
 export default async function Home() {
-  const categoryList = await prisma.category.findMany()
+  const categoryList = [{"id":1,"name":"Accounting"},{"id":2,"name":"Maths"},{"id":3,"name":"Essay Writing"},{"id":4,"name":"Programming"},{"id":5,"name":"Photo Generation"},{"id":6,"name":"Music Generation"}]
+
   console.log("Category Data:");
   console.log(categoryList);
   
