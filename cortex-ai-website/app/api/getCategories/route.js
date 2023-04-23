@@ -9,7 +9,4 @@ export async function GET(request) {
     } catch (error) {
         return res.status(500).json(error)
     }
-    
-
-    
 }

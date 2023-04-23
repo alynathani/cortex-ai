@@ -1,3 +1,4 @@
+import { get } from "http"
 import BrowseSection from "./components/BrowseSection"
 
 export const metadata = {
@@ -9,20 +10,21 @@ type categoryListProps = {
   name: string
 }[]
 
-/*
+
 async function getCategories():Promise<categoryListProps> {
-  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, { cache: 'no-store'})
+  const res = await fetch(`https://cortex-ai-git-developing-alynathani.vercel.app/api/getCategories`, { cache: 'no-store'})
   if (!res.ok) {
       console.log(res);
   }
   return res.json()
 }
-*/
+
 
 
 export default async function Home() {
-  const categoryList = [{"id":1,"name":"Accounting"},{"id":2,"name":"Maths"},{"id":3,"name":"Essay Writing"},{"id":4,"name":"Programming"},{"id":5,"name":"Photo Generation"},{"id":6,"name":"Music Generation"}]
-
+  
+  // const categoryList = [{"id":1,"name":"Accounting"},{"id":2,"name":"Maths"},{"id":3,"name":"Essay Writing"},{"id":4,"name":"Programming"},{"id":5,"name":"Photo Generation"},{"id":6,"name":"Music Generation"}]
+  const categoryList = await getCategories()
   console.log("Category Data:");
   console.log(categoryList);
   
