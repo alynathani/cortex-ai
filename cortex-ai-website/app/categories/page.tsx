@@ -1,5 +1,5 @@
 import { get } from "http"
-import BrowseSection from "./components/BrowseSection"
+import CategoriesSection from "./components/CategoriesSection"
 
 export const metadata = {
   title: 'Cortex AI - Browse'
@@ -31,7 +31,7 @@ export default async function Home() {
   return (
     
     <div style={{padding: "50px"}}>
-    <BrowseSection categoryList={categoryList} />
+    <CategoriesSection categoryList={categoryList} />
     </div>
   )
 }

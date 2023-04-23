@@ -31,7 +31,7 @@ type categoryProps = {
     name: string
 }
 
-export default function BrowseSection( {categoryList} : categoryListProps ) {
+export default function CategoriesSection( {categoryList} : categoryListProps ) {
     return (
         <>
             <TitleSection />
