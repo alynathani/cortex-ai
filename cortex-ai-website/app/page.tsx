@@ -1,4 +1,6 @@
 import HeroSection from "@/components/HeroSection"
+import GuideSection from "@/components/GuideSection"
+import Footer from "@/components/Footer"
 
 export const metadata = {
   title: 'Cortex AI - Home'
@@ -6,10 +8,14 @@ export const metadata = {
 
 export default function Home() {
   return (
+    <>
     
     <div>
     <HeroSection />
+    
     </div>
+    
+    </>
   )
 }
 

@@ -262,14 +262,14 @@ const NAV_ITEMS: Array<NavItem> = [
     label: 'Categories',
     children: [
       {
-        label: 'Essay Writing',
-        subLabel: 'Trending Design to inspire you',
+        label: 'Most Popular',
+        subLabel: 'View the most popular categories',
         href: '#',
       },
       {
-        label: 'Photo Generation',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
+        label: 'View All',
+        subLabel: 'Browse all categories',
+        href: '/categories',
       },
     ],
   },
@@ -278,12 +278,12 @@ const NAV_ITEMS: Array<NavItem> = [
     children: [
       {
         label: 'Our Picks',
-        subLabel: 'Find your dream design job',
+        subLabel: 'Tools which are simply amazing',
         href: '#',
       },
       {
         label: 'Top 100',
-        subLabel: 'An exclusive list for contract work',
+        subLabel: 'Rated by users',
         href: '#',
       },
     ],
@@ -294,6 +294,10 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: 'Social Media',
+    href: '#',
+  },
+  {
+    label: 'Contact Us',
     href: '#',
   },
 ];
