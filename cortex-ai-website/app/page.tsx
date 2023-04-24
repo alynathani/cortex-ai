@@ -1,5 +1,4 @@
 import HeroSection from "@/components/HeroSection"
-import GuideSection from "@/components/GuideSection"
 import Footer from "@/components/Footer"
 
 export const metadata = {
@@ -12,7 +11,6 @@ export default function Home() {
     
     <div>
     <HeroSection />
-    
     </div>
     
     </>
