@@ -2,6 +2,7 @@
 import {
     Container,
     Stack,
+    Link,
     Flex,
     Box,
     Heading,
@@ -90,10 +91,11 @@ function CategoryCard({id, name}: categoryProps) {
                 Category Description
             </CardBody>
             <CardFooter>
-                <Button>View Tools <Image src="./icons/settings.png"
+                <Link href={`/tools/${name}`}><Button>View Tools <Image src="./icons/settings.png"
                     height={'50%'}
                     marginLeft={'10px'}
-                ></Image></Button>
+                ></Image></Button></Link>
+                
             </CardFooter>
         </Card>
     )

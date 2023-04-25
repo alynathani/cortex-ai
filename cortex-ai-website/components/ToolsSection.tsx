@@ -22,8 +22,6 @@ import {
 import { log } from 'console';
 import { Margarine } from 'next/font/google';
 
-
-
 export default function ToolsSection() {
     return (
         <>

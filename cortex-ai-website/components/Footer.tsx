@@ -60,7 +60,7 @@ import {
           spacing={4}
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}>
-            <Link href='/'><Image h={'40px'} src='NavbarLogo.png' /></Link>
+            <Link href='/'><Image h={'40px'} src='/NavbarLogo.png' /></Link>
           
           <Text>© Cortex AI. All rights reserved</Text>
           <Stack direction={'row'} spacing={6}>
