@@ -1,5 +1,5 @@
 import { get } from "http"
-import CategoriesSection from "./components/CategoriesSection"
+import CategoriesSection from "@/components/CategoriesSection"
 
 export const metadata = {
   title: 'Cortex AI - Browse'
