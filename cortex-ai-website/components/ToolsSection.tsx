@@ -22,16 +22,9 @@ import {
 import { log } from 'console';
 import { Margarine } from 'next/font/google';
 
-export default function ToolsSection() {
-    return (
-        <>
-            <TitleSection />
-            <ToolCardSection />
-        </>
-    )
-}
 
-function TitleSection() {
+export default function TitleSection()  {
+   
     return (
         <Flex
             justifyContent={'center'}>
@@ -41,18 +34,18 @@ function TitleSection() {
                 marginBottom={'40px'}
                 textAlign={'center'}
                 fontWeight={700}>
-                Tools
+                Name Tools
             </Text>
-            <Image src="./icons/folder.png"
+            <Image src="../icons/settings.png"
                 height={{ base: '40px', lg: '50px' }}
                 marginLeft={{ base: '10px', lg: '20px' }}
                 marginTop={{ base: '2px', lg: '15px' }}
             ></Image>
         </Flex>
     )
-}
-
-function ToolCardSection() {
+  }
+  
+  function ToolCardSection() {
     return (
         <>
             <SimpleGrid spacing={{ base: '50px', lg: '100px' }} templateColumns='repeat(auto-fill, minmax(300px, 1fr))'>
@@ -60,9 +53,9 @@ function ToolCardSection() {
             </SimpleGrid>
         </>
     )
-}
-
-function ToolCard() {
+  }
+  
+  function ToolCard() {
     return (
         <Card
             rounded={'20px'}
@@ -84,7 +77,6 @@ function ToolCard() {
             </CardFooter>
         </Card>
     )
-}
-
+  }
 
 
