@@ -10,7 +10,8 @@ datasource db {
 model Tool {
   id          Int     @id @default(autoincrement())
   name        String
-  category    String
+  category    Category  @relation(fields: [categoryName], references: [name])
+  categoryName  String
   description String
   rating      Int
   downloads   Int
@@ -18,6 +19,7 @@ model Tool {
 }
 
 model Category {
-  id          Int     @id @default(autoincrement())
-  name        String
+  id   Int    @id @default(autoincrement())
+  name String @unique
+  tools Tool[]
 }
