@@ -21,11 +21,12 @@ type toolListProps = {
     imageLink: string
   }[]
   
-interface categoryPass{
-    category_name: string
+interface dataProps{
+    category_name: string,
 }
+  
 
-async function getTools({category_name}: categoryPass):Promise<toolListProps> {
+async function getTools({category_name}: dataProps):Promise<toolListProps> {
     console.log("catname:");
     console.log(category_name);
     
@@ -37,19 +38,22 @@ async function getTools({category_name}: categoryPass):Promise<toolListProps> {
     return res.json()
   }
 
+  type titleName = {
+    categoryName: string
+}
 
 export default async function Home({ params } : { params: { category_name: string }}) {
-    let category_name = params.category_name
-    
+    const category_name = params.category_name
     console.log(params.category_name);
-    
     const toolList = await getTools({category_name})
-    const jsonNow = JSON.stringify(toolList)
+    const jsonList = JSON.stringify(toolList)
     console.log("Tool Data:");
     console.log(toolList);
+    console.log(category_name);
+    
   return (
     <div style={{padding: "50px"}}>
-        <h1 style={{color: 'white'}}>{jsonNow}</h1>
+        <ToolsSection toolList={toolList} category_name={category_name} />
     </div>
   )
 }
