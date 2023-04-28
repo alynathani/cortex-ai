@@ -27,6 +27,7 @@ interface dataProps{
     category_name: string,
 }
   
+export const revalidate = 60;
 
 async function getTools({category_name}: dataProps):Promise<toolListProps> {
     console.log("catname:");

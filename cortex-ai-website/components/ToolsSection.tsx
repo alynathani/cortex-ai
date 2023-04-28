@@ -45,7 +45,6 @@ interface dataProps{
     category_name: string,
 }
 
-export const dynamic = 'force-dynamic'
 
 export default function ToolsSection( {toolList, category_name} : toolListProps) {
     console.log("tools");
