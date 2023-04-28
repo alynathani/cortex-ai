@@ -2,6 +2,9 @@ import { NextResponse } from "next/server"
 import prisma from "../../../../lib/prisma"
 import { URLSearchParams } from "url";
 
+
+export const revalidate = 60;
+
 export async function GET(request, { params }) {
     const chosenCategory = params.category_name
     console.log(chosenCategory);
