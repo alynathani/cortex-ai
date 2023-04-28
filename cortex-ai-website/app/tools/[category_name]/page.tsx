@@ -2,7 +2,7 @@
 import { Button, Card, CardBody,Image, CardFooter, CardHeader, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
 import prisma from "../../../lib/prisma"
 import ToolsSection from "../../../components/ToolsSection"
-import { FC } from "react"
+import { FC, cache } from "react"
 
 import React from 'react'
 import { color } from "framer-motion"
@@ -38,7 +38,7 @@ async function getTools({category_name}: dataProps):Promise<toolListProps> {
     console.log(category_name);
     
     
-    const res = await fetch(`${process.env.BASE_URL}/api/getTools/${category_name}`, { next: { revalidate: 10}})
+    const res = await fetch(`${process.env.BASE_URL}/api/getTools/${category_name}`, { cache: 'no-cache'})
     if (!res.ok) {
         console.log(res);
     }
