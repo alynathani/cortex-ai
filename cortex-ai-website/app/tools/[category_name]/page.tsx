@@ -14,6 +14,7 @@ interface pageProps  {
 }
 
 export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 type toolListProps = {
     id: number,
@@ -29,7 +30,7 @@ interface dataProps{
     category_name: string,
 }
 
-export const revalidate = 30;
+
   
 
 async function getTools({category_name}: dataProps):Promise<toolListProps> {
