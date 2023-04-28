@@ -1,3 +1,4 @@
+
 import { Button, Card, CardBody,Image, CardFooter, CardHeader, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
 import prisma from "../../../lib/prisma"
 import ToolsSection from "../../../components/ToolsSection"
@@ -6,6 +7,7 @@ import { FC } from "react"
 import React from 'react'
 import { color } from "framer-motion"
 import { log } from "console"
+import next from "next/types"
 
 interface pageProps  {
     params: {category_name: string}
@@ -26,15 +28,16 @@ type toolListProps = {
 interface dataProps{
     category_name: string,
 }
+
+export const revalidate = 30;
   
-export const revalidate = 60;
 
 async function getTools({category_name}: dataProps):Promise<toolListProps> {
     console.log("catname:");
     console.log(category_name);
     
     
-    const res = await fetch(`${process.env.BASE_URL}/api/getTools/${category_name}`, { cache: 'no-store'})
+    const res = await fetch(`${process.env.BASE_URL}/api/getTools/${category_name}`, { next: { revalidate: 10}})
     if (!res.ok) {
         console.log(res);
     }
