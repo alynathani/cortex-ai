@@ -32,6 +32,9 @@ type categoryProps = {
     name: string
 }
 
+export const dynamic = 'force-dynamic'
+
+
 export default function CategoriesSection( {categoryList} : categoryListProps ) {
     return (
         <>

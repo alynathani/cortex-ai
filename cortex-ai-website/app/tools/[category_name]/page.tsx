@@ -11,6 +11,8 @@ interface pageProps  {
     params: {category_name: string}
 }
 
+export const dynamic = 'force-dynamic'
+
 type toolListProps = {
     id: number,
     name: string,

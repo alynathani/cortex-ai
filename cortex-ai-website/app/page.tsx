@@ -5,6 +5,8 @@ export const metadata = {
   title: 'Cortex AI - Home'
 }
 
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
   return (
     <>

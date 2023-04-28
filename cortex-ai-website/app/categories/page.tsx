@@ -10,6 +10,7 @@ type categoryListProps = {
   name: string
 }[]
 
+export const dynamic = 'force-dynamic'
 
 async function getCategories():Promise<categoryListProps> {
   const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, { cache: 'no-store'})

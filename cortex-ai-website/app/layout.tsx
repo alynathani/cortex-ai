@@ -7,6 +7,7 @@ import { GetStaticProps } from "next"
 import { Metadata } from "next"
 import Head from "next/head"
 
+export const dynamic = 'force-dynamic'
 
 export default function RootLayout({children}: {
   children: React.ReactNode
