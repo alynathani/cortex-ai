@@ -13,8 +13,8 @@ type categoryListProps = {
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
-async function getCategories():Promise<categoryListProps> {
-  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, { cache: 'no-cache'})
+async function getCategories(){
+  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, { cache: 'no-store'})
   console.log("from getCategories:");
   const jsonData = await res.json()
   console.log(jsonData);
