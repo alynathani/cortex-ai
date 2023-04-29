@@ -10,9 +10,6 @@ type categoryListProps = {
   name: string
 }[]
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
-
 async function getCategories(){
   const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, { cache: 'no-store'})
   console.log("from getCategories:");
@@ -32,8 +29,6 @@ async function getCategories(){
 
 
 export default async function Home() {
-  
-  // const categoryList = [{"id":1,"name":"Accounting"},{"id":2,"name":"Maths"},{"id":3,"name":"Essay Writing"},{"id":4,"name":"Programming"},{"id":5,"name":"Photo Generation"},{"id":6,"name":"Music Generation"}]
   const categoryList = await getCategories()
   console.log("Category Data:");
   console.log(categoryList);
