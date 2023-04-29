@@ -15,10 +15,18 @@ export const revalidate = 0
 
 async function getCategories():Promise<categoryListProps> {
   const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, { cache: 'no-cache'})
+  console.log("from getCategories:");
+  const jsonData = await res.json()
+  console.log(jsonData);
+  
+  
+  
+  
+  
   if (!res.ok) {
       console.log(res);
   }
-  return res.json()
+  return jsonData
 }
 
 

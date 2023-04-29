@@ -38,6 +38,10 @@ export const revalidate = 0
 
 
 export default function CategoriesSection( {categoryList} : categoryListProps ) {
+    console.log("from client:");
+    
+    console.log(categoryList);
+    
     return (
         <>
             <TitleSection />
