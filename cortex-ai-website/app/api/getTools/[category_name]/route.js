@@ -8,7 +8,7 @@ export const revalidate = 60;
 export async function GET(request, { params }) {
     const chosenCategory = params.category_name
     console.log(chosenCategory);
-    try{
+    try {
         const data = await prisma.tool.findMany({
             where: {
                 categoryName: chosenCategory

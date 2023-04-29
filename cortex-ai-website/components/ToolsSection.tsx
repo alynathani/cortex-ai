@@ -31,39 +31,29 @@ type toolProps = {
     rating: number,
     downloads: number,
     imageLink: string
-  }
-  
-  type toolListProps = {
+}
+
+type ToolsSectionProps = {
     toolList: toolProps[],
-    category_name: string
-  }
-
-type titleName = {
-    category_name: string
+    categoryName: string
 }
 
-interface dataProps{
-    category_name: string,
-}
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
-export default function ToolsSection( {toolList, category_name} : toolListProps) {
+export default function ToolsSection({ toolList, categoryName }: ToolsSectionProps) {
     console.log("tools");
-    console.log(category_name);
-    
-    
+    console.log(categoryName);
     return (
         <>
-            <TitleSection category_name={category_name} />
-            <ToolCardSection toolList={toolList} category_name={category_name} />
+            <TitleSection categoryName={categoryName} toolList={toolList} />
+            <ToolCardSection toolList={toolList} categoryName={categoryName} />
         </>
     )
 }
 
-function TitleSection({category_name} : dataProps)  {
-   
+function TitleSection({ categoryName }: ToolsSectionProps) {
     return (
         <Flex
             justifyContent={'center'}>
@@ -73,7 +63,7 @@ function TitleSection({category_name} : dataProps)  {
                 marginBottom={'40px'}
                 textAlign={'center'}
                 fontWeight={700}>
-                {category_name} Tools
+                {categoryName} Tools
             </Text>
             <Image src="../icons/settings.png"
                 height={{ base: '40px', lg: '50px' }}
@@ -82,23 +72,23 @@ function TitleSection({category_name} : dataProps)  {
             ></Image>
         </Flex>
     )
-  }
-  
-  function ToolCardSection({toolList}: toolListProps) {
+}
+
+function ToolCardSection({ toolList }: ToolsSectionProps) {
     return (
         <>
             <SimpleGrid spacing={{ base: '50px', lg: '100px' }} templateColumns='repeat(auto-fill, minmax(300px, 1fr))'>
-            {toolList.map((tool) => (
+                {toolList.map((tool) => (
                     <div key={tool.id}>
-                        <ToolCard id ={tool.id} name={tool.name} categoryName={tool.categoryName} description={tool.description} rating={tool.rating} downloads={tool.downloads} imageLink={tool.imageLink}  />
+                        <ToolCard id={tool.id} name={tool.name} categoryName={tool.categoryName} description={tool.description} rating={tool.rating} downloads={tool.downloads} imageLink={tool.imageLink} />
                     </div>
                 ))}
             </SimpleGrid>
         </>
     )
-  }
-  
-  function ToolCard({id, name, description, categoryName}: toolProps) {
+}
+
+function ToolCard({ id, name, description, categoryName }: toolProps) {
     return (
         <Card
             rounded={'20px'}
@@ -113,16 +103,16 @@ function TitleSection({category_name} : dataProps)  {
                 {description}
             </CardBody>
             <CardFooter>
-            <Link href={`/tools/${categoryName}/${name}`}>
-            <Button>Guide<Image src="../icons/user-guide.png"
-                    height={'50%'}
-                    marginLeft={'10px'}
-                ></Image></Button>
-            </Link>
-                
+                <Link href={`/tools/${categoryName}/${name}`}>
+                    <Button>Guide<Image src="../icons/user-guide.png"
+                        height={'50%'}
+                        marginLeft={'10px'}
+                    ></Image></Button>
+                </Link>
+
             </CardFooter>
         </Card>
     )
-  }
+}
 
 

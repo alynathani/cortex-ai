@@ -9,9 +9,6 @@ import { color } from "framer-motion"
 import { log } from "console"
 import next from "next/types"
 
-interface pageProps  {
-    params: {category_name: string}
-}
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -42,10 +39,6 @@ async function getTools({category_name}: dataProps):Promise<toolListProps> {
     return res.json()
   }
 
-  type titleName = {
-    categoryName: string
-}
-
 export default async function Home({ params } : { params: { category_name: string }}) {
     const category_name = params.category_name
     console.log(params.category_name);
@@ -57,7 +50,7 @@ export default async function Home({ params } : { params: { category_name: strin
     
   return (
     <div style={{padding: "50px"}}>
-        <ToolsSection toolList={toolList} category_name={category_name} />
+        <ToolsSection toolList={toolList} categoryName={category_name} />
     </div>
   )
 }

@@ -23,7 +23,7 @@ import {
 import { log } from 'console';
 import { Margarine } from 'next/font/google';
 
-type categoryListProps = {
+type CategoriesSectionProps = {
     categoryList: categoryProps[]
   }
 
@@ -37,7 +37,7 @@ export const revalidate = 0
 
 
 
-export default function CategoriesSection( {categoryList} : categoryListProps ) {
+export default function CategoriesSection( {categoryList} : CategoriesSectionProps ) {
     console.log("from client:");
     
     console.log(categoryList);
@@ -71,7 +71,7 @@ function TitleSection() {
     )
 }
 
-function CategoryCardSection({ categoryList }: categoryListProps) {
+function CategoryCardSection({ categoryList }: CategoriesSectionProps) {
     return (
         <>
             <SimpleGrid spacing={{ base: '50px', lg: '100px' }} templateColumns='repeat(auto-fill, minmax(300px, 1fr))'>

@@ -9,7 +9,7 @@ export async function GET(request, { params }) {
     const toolName = params.tool_name
     console.log("tool name:");
     console.log(toolName);
-    try{
+    try {
         const data = await prisma.tool.findMany({
             where: {
                 name: toolName
