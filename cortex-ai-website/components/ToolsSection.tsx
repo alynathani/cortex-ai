@@ -4,6 +4,7 @@ import {
     Stack,
     Flex,
     Box,
+    Link,
     Heading,
     Text,
     Button,
@@ -97,7 +98,7 @@ function TitleSection({category_name} : dataProps)  {
     )
   }
   
-  function ToolCard({id, name, description}: toolProps) {
+  function ToolCard({id, name, description, categoryName}: toolProps) {
     return (
         <Card
             rounded={'20px'}
@@ -112,10 +113,13 @@ function TitleSection({category_name} : dataProps)  {
                 {description}
             </CardBody>
             <CardFooter>
-                <Button>Guide<Image src="../icons/user-guide.png"
+            <Link href={`/tools/${categoryName}/${name}`}>
+            <Button>Guide<Image src="../icons/user-guide.png"
                     height={'50%'}
                     marginLeft={'10px'}
                 ></Image></Button>
+            </Link>
+                
             </CardFooter>
         </Card>
     )
