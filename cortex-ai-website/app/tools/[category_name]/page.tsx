@@ -24,7 +24,6 @@ interface dataProps{
 }
 
 async function getTools({category_name}: dataProps):Promise<toolListProps> {
-    console.log("catname:");
     console.log(category_name);
     
     

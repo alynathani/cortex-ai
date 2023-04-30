@@ -1,12 +1,4 @@
-
-import { Button, Card, CardBody, Image, CardFooter, CardHeader, Flex, Heading, SimpleGrid, Text } from "@chakra-ui/react"
-import prisma from "../../../../lib/prisma"
-import { FC, cache } from "react"
-
 import React from 'react'
-import { color } from "framer-motion"
-import { log } from "console"
-import next from "next/types"
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -34,14 +26,20 @@ async function getTool({ toolName }: pageProps): Promise<toolListProps> {
     return res.json()
 }
 
-export default async function Home({ params }: { params: { toolName: string } }) {
-    const toolName = params.toolName
+export default async function Home({ params }: { params: { tool_name: string } }) {
+    const toolName = params.tool_name.replace("%20", " ")
+    console.log("page tool name:");
+    console.log(toolName);
+    
+    
+
     const toolList = await getTool({ toolName })
     const jsonTest = JSON.stringify(toolList)
     console.log("Tool Page");
 
     return (
         <div style={{ padding: "50px" }}>
+            <h1 style={{ color: "white" }}>{toolName}</h1>
             <h1 style={{ color: "white" }}>{jsonTest}</h1>
         </div>
     )
