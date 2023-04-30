@@ -37,8 +37,6 @@ type ToolsSectionProps = {
 }
 
 export default function ToolsSection({ toolList, categoryName }: ToolsSectionProps) {
-    console.log("tools");
-    console.log(categoryName);
     return (
         <>
             <TitleSection categoryName={categoryName} toolList={toolList} />

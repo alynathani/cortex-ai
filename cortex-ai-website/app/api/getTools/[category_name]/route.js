@@ -1,11 +1,8 @@
 import { NextResponse } from "next/server"
 import prisma from "../../../../lib/prisma"
 
-export const revalidate = 60;
-
 export async function GET(request, { params }) {
     const chosenCategory = params.category_name
-    console.log(chosenCategory);
     try {
         const data = await prisma.tool.findMany({
             where: {

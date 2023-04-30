@@ -6,9 +6,6 @@ import { FC, cache } from "react"
 
 import React from 'react'
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
-
 type toolListProps = {
     id: number,
     name: string,
@@ -24,10 +21,10 @@ interface dataProps{
 }
 
 async function getTools({category_name}: dataProps):Promise<toolListProps> {
-    console.log(category_name);
+
     
     
-    const res = await fetch(`${process.env.BASE_URL}/api/getTools/${category_name}`, { cache: 'no-cache'})
+    const res = await fetch(`${process.env.BASE_URL}/api/getTools/${category_name}`, { cache: 'no-store'})
     if (!res.ok) {
         console.log(res);
     }
@@ -36,13 +33,8 @@ async function getTools({category_name}: dataProps):Promise<toolListProps> {
 
 export default async function Home({ params } : { params: { category_name: string }}) {
     const category_name = params.category_name
-    console.log(params.category_name);
     const toolList = await getTools({category_name})
     const jsonList = JSON.stringify(toolList)
-    console.log("Tool Data:");
-    console.log(toolList);
-    console.log(category_name);
-    
   return (
     <div style={{padding: "50px"}}>
         <ToolsSection toolList={toolList} categoryName={category_name} />

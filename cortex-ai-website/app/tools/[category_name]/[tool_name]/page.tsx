@@ -12,15 +12,14 @@ type toolListProps = {
     rating: number,
     downloads: number,
     imageLink: string
-}
+}[]
 
 interface pageProps {
     toolName: string,
 }
 
 async function getTool({ toolName }: pageProps): Promise<toolListProps> {
-    console.log(toolName);
-    const res = await fetch(`${process.env.BASE_URL}/api/getTool/${toolName}`, { cache: 'no-cache' })
+    const res = await fetch(`${process.env.BASE_URL}/api/getTool/${toolName}`, { cache: 'no-store' })
     if (!res.ok) {
         console.log(res);
     }
@@ -29,18 +28,14 @@ async function getTool({ toolName }: pageProps): Promise<toolListProps> {
 
 export default async function Home({ params }: { params: { tool_name: string } }) {
     const toolName = params.tool_name.replace("%20", " ")
-    console.log("page tool name:");
-    console.log(toolName);
-    
-    
-
     const toolList = await getTool({ toolName })
     const jsonTest = JSON.stringify(toolList)
-    console.log("Tool Page");
+    const reformat = toolList[0]
+    
 
     return (
         <div>
-            <ToolGuideSection />
+            <ToolGuideSection toolProps={reformat} />
         </div>
     )
 }

@@ -31,10 +31,6 @@ type categoryProps = {
 }
 
 export default function CategoriesSection( {categoryList} : CategoriesSectionProps ) {
-    console.log("from client:");
-    
-    console.log(categoryList);
-    
     return (
         <>
             <TitleSection />
