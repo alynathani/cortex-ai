@@ -1,4 +1,5 @@
 import React from 'react'
+import ToolGuideSection from '@/components/ToolGuideSection'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -38,9 +39,8 @@ export default async function Home({ params }: { params: { tool_name: string } }
     console.log("Tool Page");
 
     return (
-        <div style={{ padding: "50px" }}>
-            <h1 style={{ color: "white" }}>{toolName}</h1>
-            <h1 style={{ color: "white" }}>{jsonTest}</h1>
+        <div>
+            <ToolGuideSection />
         </div>
     )
 }
