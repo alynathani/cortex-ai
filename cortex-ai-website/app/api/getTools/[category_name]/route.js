@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server"
 import prisma from "../../../../lib/prisma"
-import { URLSearchParams } from "url";
-
 
 export const revalidate = 60;
 

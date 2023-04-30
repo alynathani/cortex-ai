@@ -17,8 +17,6 @@ async function getCategories() {
   return jsonData
 }
 
-
-
 export default async function Home() {
   const categoryList = await getCategories()
   console.log("Category Data:");
@@ -31,6 +29,3 @@ export default async function Home() {
     </div>
   )
 }
-
-
-

@@ -6,7 +6,7 @@ import { URLSearchParams } from "url";
 export const revalidate = 60;
 
 export async function GET(request, { params }) {
-    const toolName = params.tool_name
+    const toolName = params.toolName
     console.log("tool name:");
     console.log(toolName);
     try {

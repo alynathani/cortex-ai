@@ -8,7 +8,6 @@ import { color } from "framer-motion"
 import { log } from "console"
 import next from "next/types"
 
-
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
@@ -23,39 +22,27 @@ type toolListProps = {
 }
 
 interface pageProps {
-    tool_name: string,
+    toolName: string,
 }
 
-async function getTool({ tool_name }: pageProps): Promise<toolListProps> {
-    console.log("catname:");
-    console.log(tool_name);
-
-
-    const res = await fetch(`${process.env.BASE_URL}/api/getTool/${tool_name}`, { cache: 'no-cache' })
+async function getTool({ toolName }: pageProps): Promise<toolListProps> {
+    console.log(toolName);
+    const res = await fetch(`${process.env.BASE_URL}/api/getTool/${toolName}`, { cache: 'no-cache' })
     if (!res.ok) {
         console.log(res);
     }
     return res.json()
 }
 
-
-
-export default async function Home({ params }: { params: { tool_name: string } }) {
-    const tool_name = params.tool_name
-
-    console.log(params.tool_name);
-    const toolList = await getTool({ tool_name })
-    const jsonList = JSON.stringify(toolList)
-    console.log("Tool Data:");
-    console.log(toolList);
-    console.log(tool_name);
+export default async function Home({ params }: { params: { toolName: string } }) {
+    const toolName = params.toolName
+    const toolList = await getTool({ toolName })
+    const jsonTest = JSON.stringify(toolList)
+    console.log("Tool Page");
 
     return (
         <div style={{ padding: "50px" }}>
-            <h1 style={{ color: "white" }}>{jsonList}</h1>
+            <h1 style={{ color: "white" }}>{jsonTest}</h1>
         </div>
     )
 }
-
-
-

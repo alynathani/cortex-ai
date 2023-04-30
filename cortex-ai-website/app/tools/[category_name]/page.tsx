@@ -5,10 +5,6 @@ import ToolsSection from "../../../components/ToolsSection"
 import { FC, cache } from "react"
 
 import React from 'react'
-import { color } from "framer-motion"
-import { log } from "console"
-import next from "next/types"
-
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0

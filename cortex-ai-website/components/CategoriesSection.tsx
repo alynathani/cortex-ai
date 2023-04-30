@@ -20,8 +20,6 @@ import {
     textDecoration,
 
 } from '@chakra-ui/react';
-import { log } from 'console';
-import { Margarine } from 'next/font/google';
 
 type CategoriesSectionProps = {
     categoryList: categoryProps[]
@@ -31,11 +29,6 @@ type categoryProps = {
     id: number,
     name: string
 }
-
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
-
-
 
 export default function CategoriesSection( {categoryList} : CategoriesSectionProps ) {
     console.log("from client:");
@@ -109,6 +102,3 @@ function CategoryCard({id, name}: categoryProps) {
         </Card>
     )
 }
-
-
-

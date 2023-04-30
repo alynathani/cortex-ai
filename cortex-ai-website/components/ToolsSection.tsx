@@ -20,8 +20,6 @@ import {
     textDecoration,
 
 } from '@chakra-ui/react';
-import { log } from 'console';
-import { Margarine } from 'next/font/google';
 
 type toolProps = {
     id: number,
@@ -37,10 +35,6 @@ type ToolsSectionProps = {
     toolList: toolProps[],
     categoryName: string
 }
-
-
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
 
 export default function ToolsSection({ toolList, categoryName }: ToolsSectionProps) {
     console.log("tools");
