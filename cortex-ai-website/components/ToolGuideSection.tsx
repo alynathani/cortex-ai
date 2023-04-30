@@ -80,7 +80,8 @@ export default function ToolGuideSection({toolProps}: ToolGuideSectionProps) {
 
                             <Text fontSize={'lg'}
                                 color={'white'}>
-                                {toolProps.description}
+                                
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut d
                             </Text>
                         </VStack>
                         <Box>
