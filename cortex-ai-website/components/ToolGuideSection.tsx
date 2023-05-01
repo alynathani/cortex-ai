@@ -26,10 +26,14 @@ type toolListProps = {
     name: string,
     categoryName: string,
     description: string,
+    keyFeatures: string,
+    useCases: string,
+    guide: string,
     rating: number,
+    externalLink: string,
     downloads: number,
     imageLink: string
-}
+  }
 
 type ToolGuideSectionProps = {
     toolProps: toolListProps

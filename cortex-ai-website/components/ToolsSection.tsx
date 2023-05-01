@@ -26,10 +26,14 @@ type toolProps = {
     name: string,
     categoryName: string,
     description: string,
+    keyFeatures: string,
+    useCases: string,
+    guide: string,
     rating: number,
+    externalLink: string,
     downloads: number,
     imageLink: string
-}
+  }
 
 type ToolsSectionProps = {
     toolList: toolProps[],
@@ -72,7 +76,7 @@ function ToolCardSection({ toolList }: ToolsSectionProps) {
             <SimpleGrid spacing={{ base: '50px', lg: '100px' }} templateColumns='repeat(auto-fill, minmax(300px, 1fr))'>
                 {toolList.map((tool) => (
                     <div key={tool.id}>
-                        <ToolCard id={tool.id} name={tool.name} categoryName={tool.categoryName} description={tool.description} rating={tool.rating} downloads={tool.downloads} imageLink={tool.imageLink} />
+                        <ToolCard id={tool.id} name={tool.name} categoryName={tool.categoryName} description={tool.description} rating={tool.rating} downloads={tool.downloads} imageLink={tool.imageLink} keyFeatures={tool.keyFeatures} useCases={tool.useCases} guide={tool.guide} externalLink={tool.externalLink} />
                     </div>
                 ))}
             </SimpleGrid>

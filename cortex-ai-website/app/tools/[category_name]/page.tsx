@@ -7,14 +7,18 @@ import { FC, cache } from "react"
 import React from 'react'
 
 type toolListProps = {
-    id: number,
-    name: string,
-    categoryName: string,
-    description: string,
-    rating: number,
-    downloads: number,
-    imageLink: string
-  }[]
+  id: number,
+  name: string,
+  categoryName: string,
+  description: string,
+  keyFeatures: string,
+  useCases: string,
+  guide: string,
+  rating: number,
+  externalLink: string,
+  downloads: number,
+  imageLink: string
+}[]
   
 interface dataProps{
     category_name: string,

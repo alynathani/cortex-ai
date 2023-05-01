@@ -27,7 +27,8 @@ type CategoriesSectionProps = {
 
 type categoryProps = {
     id: number,
-    name: string
+    name: string,
+    description: string
 }
 
 export default function CategoriesSection( {categoryList} : CategoriesSectionProps ) {
@@ -66,7 +67,7 @@ function CategoryCardSection({ categoryList }: CategoriesSectionProps) {
             <SimpleGrid spacing={{ base: '50px', lg: '100px' }} templateColumns='repeat(auto-fill, minmax(300px, 1fr))'>
                 {categoryList.map((category) => (
                     <div key={category.id}>
-                        <CategoryCard id ={category.id} name={category.name} />
+                        <CategoryCard id ={category.id} name={category.name} description={category.description} />
                     </div>
                 ))}
             </SimpleGrid>
@@ -74,10 +75,11 @@ function CategoryCardSection({ categoryList }: CategoriesSectionProps) {
     )
 }
 
-function CategoryCard({id, name}: categoryProps) {
+function CategoryCard({id, name, description}: categoryProps) {
     return (
         <Card
             rounded={'20px'}
+            
             boxShadow={'lg'}
             color={'black'}
             bg={'white'}>
@@ -85,8 +87,9 @@ function CategoryCard({id, name}: categoryProps) {
                 <Heading size='md'>{name}</Heading>
             </CardHeader>
             <CardBody
+            py={0}
             >
-                Category Description
+                {description}
             </CardBody>
             <CardFooter>
                 <Link href={`/tools/${name}`}><Button>View Tools <Image src="./icons/settings.png"
