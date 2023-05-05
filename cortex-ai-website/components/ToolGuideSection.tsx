@@ -116,10 +116,8 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                             <SimpleGrid columns={{ base: 1 }} spacing={10}
                                 color={'white'}>
                                 <List spacing={2}>
-                                    {featuresList.map((feature, index) => (
-                                        <ListItem key={index}>{feature}
-                                        </ListItem>
-                                    ))}
+                                    {featuresList.map((feature) => <ListItem>{feature}
+                                        </ListItem>)}
 
 
 
