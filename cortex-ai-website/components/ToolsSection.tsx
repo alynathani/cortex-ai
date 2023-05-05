@@ -20,6 +20,7 @@ import {
     textDecoration,
 
 } from '@chakra-ui/react';
+import { useState } from 'react';
 
 type toolProps = {
     id: number,
@@ -85,6 +86,22 @@ function ToolCardSection({ toolList }: ToolsSectionProps) {
 }
 
 function ToolCard({ id, name, description, categoryName }: toolProps) {
+    const [preview, setPreview] = useState(description.substring(0,100) + '...')
+    const [showMore, setShowMore] = useState(false)
+    
+    function handleMoreClick() {
+        console.log(description);
+        if (showMore == false){
+            setPreview(description)
+        }
+        else{
+            setPreview((description.substring(0,100) + '...'))
+        }
+        
+        setShowMore(!showMore)
+        
+      }
+
     return (
         <Card
             rounded={'20px'}
@@ -95,8 +112,13 @@ function ToolCard({ id, name, description, categoryName }: toolProps) {
                 <Heading size='md'>{name}</Heading>
             </CardHeader>
             <CardBody
+            py={0}
             >
-                {description}
+                {preview}
+                
+                <Button
+                size={'xs'}
+                onClick={handleMoreClick}>{showMore ? 'Hide' : 'Show More'}</Button>
             </CardBody>
             <CardFooter>
                 <Link href={`/tools/${categoryName}/${name}`}>

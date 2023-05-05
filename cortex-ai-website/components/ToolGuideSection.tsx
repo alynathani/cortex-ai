@@ -17,6 +17,8 @@ import {
     VisuallyHidden,
     List,
     ListItem,
+    OrderedList,
+    Divider,
 } from '@chakra-ui/react';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { MdLocalShipping } from 'react-icons/md';
@@ -33,13 +35,25 @@ type toolListProps = {
     externalLink: string,
     downloads: number,
     imageLink: string
-  }
+}
 
 type ToolGuideSectionProps = {
     toolProps: toolListProps
 }
 
-export default function ToolGuideSection({toolProps}: ToolGuideSectionProps) {
+export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
+
+    var featuresList = toolProps.keyFeatures.split(",")
+    var guideList = toolProps.guide.split(",")
+
+    console.log(featuresList);
+    console.log(guideList);
+    
+
+
+
+
+
     return (
         <Container maxW={'7xl'}>
             <SimpleGrid
@@ -48,15 +62,16 @@ export default function ToolGuideSection({toolProps}: ToolGuideSectionProps) {
                 pt={{ base: 9, md: 12 }}>
                 <Flex>
                     <Image
+                    backgroundColor={'white'}
                         rounded={'md'}
                         alt={'product image'}
                         src={
-                            'https://images.unsplash.com/photo-1596516109370-29001ec8ec36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyODE1MDl8MHwxfGFsbHx8fHx8fHx8fDE2Mzg5MzY2MzE&ixlib=rb-1.2.1&q=80&w=1080'
+                            toolProps.imageLink
                         }
-                        fit={'cover'}
-                        align={'center'}
+                        padding={{base: 5,lg:10}}
+                        
+                        
 
-                        h={{ base: '250px', sm: '300px', lg: '400px' }}
                     />
                 </Flex>
                 <Stack spacing={{ base: 6, md: 10 }}>
@@ -64,7 +79,7 @@ export default function ToolGuideSection({toolProps}: ToolGuideSectionProps) {
                         <Heading
                             lineHeight={1.1}
                             fontWeight={600}
-                            fontSize={{ base: '2xl', sm: '4xl', lg: '5xl' }}
+                            fontSize={{ base: '3xl', sm: '4xl', lg: '5xl' }}
                             color={'white'}>
 
                             {toolProps.name}
@@ -84,39 +99,39 @@ export default function ToolGuideSection({toolProps}: ToolGuideSectionProps) {
 
                             <Text fontSize={'lg'}
                                 color={'white'}>
-                                
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut d
+
+                                {toolProps.description}
                             </Text>
                         </VStack>
                         <Box>
                             <Text
-                                fontSize={{ base: '16px', lg: '18px' }}
+                                fontSize={{ base: '18px', lg: '20px' }}
                                 color={'white'}
-                                fontWeight={'500'}
+                                fontWeight={'700'}
                                 textTransform={'uppercase'}
                                 mb={'4'}>
                                 Features
                             </Text>
 
-                            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}
+                            <SimpleGrid columns={{ base: 1 }} spacing={10}
                                 color={'white'}>
                                 <List spacing={2}>
-                                    <ListItem>Chronograph</ListItem>
-                                    <ListItem>Master Chronometer Certified</ListItem>{' '}
-                                    <ListItem>Tachymeter</ListItem>
+                                    {featuresList.map((feature) => (
+                                        <ListItem>{feature}
+                                        </ListItem>
+                                    ))}
+
+
+
                                 </List>
-                                <List spacing={2}>
-                                    <ListItem>Anti‑magnetic</ListItem>
-                                    <ListItem>Chronometer</ListItem>
-                                    <ListItem>Small seconds</ListItem>
-                                </List>
+
                             </SimpleGrid>
                         </Box>
                     </Stack>
                 </Stack>
             </SimpleGrid>
             <Box>
-                <Link href='/categories'>
+                <Link href={toolProps.externalLink}>
                     <Button
                         rounded={'full'}
                         size={'lg'}
@@ -148,15 +163,24 @@ export default function ToolGuideSection({toolProps}: ToolGuideSectionProps) {
                     mb={'4'}>
                     Tool Guide
                 </Text>
+                <Divider borderColor={useColorModeValue('gray.200', 'gray.600')}
+                />
 
-                <Text fontSize={'lg'}
-                    color={'white'}
-                    mb={10}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-                    aliquid amet at delectus doloribus dolorum expedita hic, ipsum
-                    maxime modi nam officiis porro, quae, quisquam quos
-                    reprehenderit velit? Natus, totam. - Tool Description
-                </Text>
+                <OrderedList spacing={2}
+                
+                color={'white'}
+                fontSize={'lg'}
+                paddingBottom={5}
+                paddingTop={5}
+                >
+                        {guideList.map((feature) => (
+                            <ListItem>{feature}
+                            </ListItem>
+                        ))}
+
+
+
+                    </OrderedList>
             </Box>
         </Container>
     );
