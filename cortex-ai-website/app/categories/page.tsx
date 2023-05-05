@@ -6,7 +6,7 @@ export const metadata = {
 }
 
 async function getCategories() {
-  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, {cache:'force-cache'})
+  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, {cache:'no-store'})
   const jsonData = await res.json()
 
   if (!res.ok) {
