@@ -20,6 +20,7 @@ import {
     OrderedList,
     Divider,
 } from '@chakra-ui/react';
+import { features } from 'process';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { MdLocalShipping } from 'react-icons/md';
 
@@ -116,8 +117,10 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                             <SimpleGrid columns={{ base: 1 }} spacing={10}
                                 color={'white'}>
                                 <List spacing={2}>
-                                    {featuresList.map((feature) => <ListItem>{feature}
-                                        </ListItem>)}
+                                    {featuresList.map((feature) => (
+                                        <ListItem key={feature}>{feature}
+                                        </ListItem>
+                                    ))}
 
 
 
@@ -172,7 +175,7 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                 paddingTop={5}
                 >
                         {guideList.map((feature) => (
-                            <ListItem>{feature}
+                            <ListItem key={feature}>{feature}
                             </ListItem>
                         ))}
 
