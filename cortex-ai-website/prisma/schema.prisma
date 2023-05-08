@@ -13,12 +13,12 @@ model Tool {
   category    Category  @relation(fields: [categoryName], references: [name])
   categoryName  String
   description String
-  keyFeatures String
-  useCases String
-  guide String
-  rating      Int
-  externalLink  String
-  downloads   Int
+  keyFeatures String?
+  useCases String?
+  guide String?
+  rating      Int?
+  externalLink  String?
+  downloads   Int?
   imageLink   String?
 }
 

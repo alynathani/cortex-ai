@@ -28,7 +28,7 @@ async function getTools({category_name}: dataProps):Promise<toolListProps> {
 
     
     
-    const res = await fetch(`${process.env.BASE_URL}/api/getTools/${category_name}`)
+    const res = await fetch(`${process.env.BASE_URL}/api/getTools/${category_name}`, { cache:'no-store'})
     if (!res.ok) {
         console.log(res);
     }

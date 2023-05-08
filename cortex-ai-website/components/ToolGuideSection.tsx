@@ -20,7 +20,6 @@ import {
     OrderedList,
     Divider,
 } from '@chakra-ui/react';
-import { features } from 'process';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { MdLocalShipping } from 'react-icons/md';
 
@@ -62,18 +61,19 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                 spacing={{ base: 8, md: 10 }}
                 pt={{ base: 9, md: 12 }}>
                 <Flex>
-                    <Image
+                    <Box color={'white'}
+                    margin={'auto'}>
+                        <Image
                     backgroundColor={'white'}
                         rounded={'md'}
                         alt={'product image'}
                         src={
                             toolProps.imageLink
                         }
-                        padding={{base: 5,lg:10}}
-                        
-                        
-
+                        padding={{base: 5,lg:5}}
+                        height={'300px'}
                     />
+                    </Box>
                 </Flex>
                 <Stack spacing={{ base: 6, md: 10 }}>
                     <Box as={'header'}>
@@ -118,7 +118,7 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                                 color={'white'}>
                                 <List spacing={2}>
                                     {featuresList.map((feature) => (
-                                        <ListItem key={feature}>{feature}
+                                        <ListItem>{feature}
                                         </ListItem>
                                     ))}
 
@@ -175,7 +175,7 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                 paddingTop={5}
                 >
                         {guideList.map((feature) => (
-                            <ListItem key={feature}>{feature}
+                            <ListItem>{feature}
                             </ListItem>
                         ))}
 

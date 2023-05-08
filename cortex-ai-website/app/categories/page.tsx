@@ -1,12 +1,13 @@
 import { get } from "http"
 import CategoriesSection from "@/components/CategoriesSection"
+import { cache } from "react"
 
 export const metadata = {
   title: 'Cortex AI - Browse'
 }
 
 async function getCategories() {
-  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`)
+  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, { cache:'no-store'})
   const jsonData = await res.json()
 
   if (!res.ok) {
