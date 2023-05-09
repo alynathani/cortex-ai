@@ -23,7 +23,7 @@ interface pageProps {
 }
 
 async function getTool({ toolName }: pageProps): Promise<toolListProps> {
-    const res = await fetch(`${process.env.BASE_URL}/api/getTool/${toolName}`, { cache:'no-store'})
+    const res = await fetch(`${process.env.BASE_URL}/api/getTool/${toolName}`, { cache:'force-cache'})
     if (!res.ok) {
         console.log(res);
     }
