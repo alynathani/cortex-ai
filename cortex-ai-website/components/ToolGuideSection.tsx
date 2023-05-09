@@ -175,7 +175,7 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                 paddingTop={5}
                 >
                         {guideList.map((feature) => (
-                            <ListItem>{feature}
+                            <ListItem key={feature}>{feature}
                             </ListItem>
                         ))}
 
