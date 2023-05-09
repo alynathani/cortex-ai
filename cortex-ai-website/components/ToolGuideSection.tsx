@@ -118,7 +118,7 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                                 color={'white'}>
                                 <List spacing={2}>
                                     {featuresList.map((feature) => (
-                                        <ListItem>{feature}
+                                        <ListItem key={feature}>{feature}
                                         </ListItem>
                                     ))}
 
