@@ -42,8 +42,10 @@ type ToolGuideSectionProps = {
 }
 
 export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
-
+    
     var featuresList = toolProps.keyFeatures.split(",")
+
+
     var guideList = toolProps.guide.split(",")
 
     console.log(featuresList);

@@ -23,7 +23,7 @@ interface pageProps {
 }
 
 async function getTool({ toolName }: pageProps): Promise<toolListProps> {
-    const res = await fetch(`${process.env.BASE_URL}/api/getTool/${toolName}`, { cache:'force-cache'})
+    const res = await fetch(`${process.env.BASE_URL}/api/getTool/${toolName}`, { cache:'no-store'})
     if (!res.ok) {
         console.log(res);
     }
@@ -33,7 +33,8 @@ async function getTool({ toolName }: pageProps): Promise<toolListProps> {
 export default async function Home({ params }: { params: { tool_name: string } }) {
     const toolName = params.tool_name.replace("%20", " ")
     const toolList = await getTool({ toolName })
-    const jsonTest = JSON.stringify(toolList)
+
+    
     const reformat = toolList[0]
     
 

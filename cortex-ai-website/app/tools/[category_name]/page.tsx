@@ -28,7 +28,7 @@ async function getTools({category_name}: dataProps):Promise<toolListProps> {
 
     
     
-    const res = await fetch(`${process.env.BASE_URL}/api/getTools/${category_name}`, { cache:'force-cache'})
+    const res = await fetch(`${process.env.BASE_URL}/api/getTools/${category_name}`, { cache:'no-store'})
     if (!res.ok) {
         console.log(res);
     }
@@ -38,7 +38,8 @@ async function getTools({category_name}: dataProps):Promise<toolListProps> {
 export default async function Home({ params } : { params: { category_name: string }}) {
     const category_name = params.category_name
     const toolList = await getTools({category_name})
-    const jsonList = JSON.stringify(toolList)
+
+    
   return (
     <div style={{padding: "50px"}}>
         <ToolsSection toolList={toolList} categoryName={category_name} />
