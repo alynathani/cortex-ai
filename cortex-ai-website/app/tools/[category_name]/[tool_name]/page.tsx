@@ -1,8 +1,6 @@
 import React from 'react'
 import ToolGuideSection from '@/components/ToolGuideSection'
 
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
 
 type toolListProps = {
     id: number,
@@ -24,7 +22,7 @@ interface pageProps {
 }
 
 async function getTool({ toolName }: pageProps): Promise<toolListProps> {
-    const res = await fetch(`${process.env.BASE_URL}/api/getTool/${toolName}`, { cache:'force-cache'})
+    const res = await fetch(`${process.env.BASE_URL}/api/getTool/${toolName}`, { cache:'no-store'})
     if (!res.ok) {
         console.log(res);
     }
