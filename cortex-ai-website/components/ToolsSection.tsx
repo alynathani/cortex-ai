@@ -33,7 +33,8 @@ type toolProps = {
     rating: number,
     externalLink: string,
     downloads: number,
-    imageLink: string
+    imageLink: string,
+    videoLink: string
   }
 
 type ToolsSectionProps = {
@@ -77,7 +78,7 @@ function ToolCardSection({ toolList }: ToolsSectionProps) {
             <SimpleGrid spacing={{ base: '50px', lg: '100px' }} templateColumns='repeat(auto-fill, minmax(300px, 1fr))'>
                 {toolList.map((tool) => (
                     <div key={tool.id}>
-                        <ToolCard id={tool.id} name={tool.name} categoryName={tool.categoryName} description={tool.description} rating={tool.rating} downloads={tool.downloads} imageLink={tool.imageLink} keyFeatures={tool.keyFeatures} useCases={tool.useCases} guide={tool.guide} externalLink={tool.externalLink} />
+                        <ToolCard id={tool.id} name={tool.name} categoryName={tool.categoryName} description={tool.description} rating={tool.rating} downloads={tool.downloads} imageLink={tool.imageLink} keyFeatures={tool.keyFeatures} useCases={tool.useCases} guide={tool.guide} externalLink={tool.externalLink} videoLink={tool.videoLink} />
                     </div>
                 ))}
             </SimpleGrid>
@@ -85,7 +86,7 @@ function ToolCardSection({ toolList }: ToolsSectionProps) {
     )
 }
 
-function ToolCard({ id, name, description, categoryName }: toolProps) {
+function ToolCard({ id, name, description, categoryName, imageLink }: toolProps) {
     const [preview, setPreview] = useState(description.substring(0,100) + '...')
     const [showMore, setShowMore] = useState(false)
     
@@ -108,8 +109,22 @@ function ToolCard({ id, name, description, categoryName }: toolProps) {
             boxShadow={'lg'}
             color={'black'}
             bg={'white'}>
-            <CardHeader>
+            <CardHeader
+            pb={0}>
+                <Flex>
                 <Heading size='md'>{name}</Heading>
+                <Image src={imageLink}
+                        height={'50px'}
+                        
+                        marginLeft={5}
+                        paddingBottom={5}
+                        
+
+                        
+                    ></Image>
+
+                </Flex>
+                
             </CardHeader>
             <CardBody
             py={0}
