@@ -8,6 +8,7 @@ import {
     Link,
     Image,
     Flex,
+    Wrap,
     VStack,
     Button,
     Heading,
@@ -19,7 +20,11 @@ import {
     ListItem,
     OrderedList,
     Divider,
+    WrapItem,
 } from '@chakra-ui/react';
+import { log } from 'console';
+import { wrap } from 'module';
+import { features } from 'process';
 import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import { MdLocalShipping } from 'react-icons/md';
 
@@ -34,26 +39,22 @@ type toolListProps = {
     rating: number,
     externalLink: string,
     downloads: number,
-    imageLink: string
+    imageLink: string,
+    videoLink: string
 }
 
 type ToolGuideSectionProps = {
-    toolProps: toolListProps
+    toolProps: toolListProps,
 }
 
+
 export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
-    
-    var featuresList = toolProps.keyFeatures.split(",")
 
+    let featuresArray: string[] = JSON.parse(toolProps.keyFeatures)
 
-    var guideList = toolProps.guide.split(",")
+    let guideArray: string[] = JSON.parse(toolProps.guide)
 
-    console.log(featuresList);
-    console.log(guideList);
-    
-
-
-
+    console.log(toolProps.videoLink);
 
 
     return (
@@ -64,17 +65,17 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                 pt={{ base: 9, md: 12 }}>
                 <Flex>
                     <Box color={'white'}
-                    margin={'auto'}>
+                        margin={'auto'}>
                         <Image
-                    backgroundColor={'white'}
-                        rounded={'md'}
-                        alt={'product image'}
-                        src={
-                            toolProps.imageLink
-                        }
-                        padding={{base: 5,lg:5}}
-                        height={'300px'}
-                    />
+                            backgroundColor={'white'}
+                            rounded={'md'}
+                            alt={'product image'}
+                            src={
+                                toolProps.imageLink
+                            }
+                            padding={{ base: 5, lg: 5 }}
+                            height={'300px'}
+                        />
                     </Box>
                 </Flex>
                 <Stack spacing={{ base: 6, md: 10 }}>
@@ -119,7 +120,7 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                             <SimpleGrid columns={{ base: 1 }} spacing={10}
                                 color={'white'}>
                                 <List spacing={2}>
-                                    {featuresList.map((feature) => (
+                                    {featuresArray.map((feature) => (
                                         <ListItem key={feature}>{feature}
                                         </ListItem>
                                     ))}
@@ -169,22 +170,68 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                 <Divider borderColor={useColorModeValue('gray.200', 'gray.600')}
                 />
 
-                <OrderedList spacing={2}
-                
-                color={'white'}
-                fontSize={'lg'}
-                paddingBottom={5}
-                paddingTop={5}
-                >
-                        {guideList.map((feature) => (
-                            <ListItem key={feature}>{feature}
-                            </ListItem>
-                        ))}
 
 
 
-                    </OrderedList>
             </Box>
+            
+
+            
+            <Flex padding={{base:0, lg:10}}  flexWrap={'wrap'}>
+            
+
+            
+                    
+                <OrderedList spacing={2}
+                flex={1}
+
+                    color={'white'}
+                    fontSize={'lg'}
+                    paddingRight={10}
+                    paddingTop={5}
+                    
+                    
+                    marginRight={{base:0,lg:10}}
+                    
+                    
+                >
+                    {guideArray.map((feature) => (
+                        <ListItem key={feature}>{feature}
+                        </ListItem>
+                    ))}
+                    
+                </OrderedList>
+                
+                    
+
+                
+
+                <Wrap>
+                <Box py={5} mx={10}
+
+                
+            
+                >
+                <iframe
+                    width="500"
+                    height="300"
+                    src={`https://www.youtube.com/embed/${toolProps.videoLink}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="Embedded youtube"
+                    
+                />
+                </Box>
+                </Wrap>
+                
+                
+                
+                
+            </Flex>
+            
+
+
         </Container>
     );
 }

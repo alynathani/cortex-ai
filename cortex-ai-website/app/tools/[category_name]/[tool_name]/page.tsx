@@ -15,7 +15,8 @@ type toolListProps = {
     rating: number,
     externalLink: string,
     downloads: number,
-    imageLink: string
+    imageLink: string,
+    videoLink: string
 }[]
 
 interface pageProps {

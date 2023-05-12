@@ -20,6 +20,7 @@ model Tool {
   externalLink  String?
   downloads   Int?
   imageLink   String?
+  videoLink String?
 }
 
 model Category {
