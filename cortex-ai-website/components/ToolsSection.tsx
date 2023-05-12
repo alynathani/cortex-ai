@@ -112,11 +112,12 @@ function ToolCard({ id, name, description, categoryName, imageLink }: toolProps)
             <CardHeader
             pb={0}>
                 <Flex>
-                <Heading size='md'>{name}</Heading>
+                <Heading size='md'
+                paddingRight={3}>{name}</Heading>
                 <Image src={imageLink}
                         height={'50px'}
                         
-                        marginLeft={5}
+                        
                         paddingBottom={5}
                         
 
