@@ -74,7 +74,7 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                                 toolProps.imageLink
                             }
                             padding={{ base: 5, lg: 5 }}
-                            height={'300px'}
+                            height={{base: '200px',lg:'300px'}}
                         />
                     </Box>
                 </Flex>
@@ -192,11 +192,16 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                     
                     
                     marginRight={{base:0,lg:10}}
+                    marginLeft={10}
                     
                     
                 >
                     {guideArray.map((feature) => (
-                        <ListItem key={feature}>{feature}
+                        <ListItem key={feature}
+                        backgroundColor={'gray.600'}
+                        rounded={'2xl'}
+                        padding={2}
+                        marginBottom={4}>{feature}
                         </ListItem>
                     ))}
                     

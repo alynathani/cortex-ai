@@ -262,15 +262,25 @@ const NAV_ITEMS: Array<NavItem> = [
     label: 'Categories',
     children: [
       {
-        label: 'Most Popular',
-        subLabel: 'View the most popular categories',
-        href: '#',
-      },
-      {
         label: 'View All',
-        subLabel: 'Browse all categories',
+        subLabel: 'View the all categories',
         href: '/categories',
       },
+      {
+        label: 'Education',
+        subLabel: 'Browse all Education tools for learning or teaching.',
+        href: '/tools/Education',
+      },
+      {
+        label: 'Graphic Design',
+        subLabel: 'Enhance your creativity with AI.',
+        href: '/categories',
+      },
+      {
+        label: 'Professional and Business',
+        subLabel: 'Time management, investment and more',
+        href: '/categories',
+      }
     ],
   },
   {

@@ -52,6 +52,7 @@ export default function ToolsSection({ toolList, categoryName }: ToolsSectionPro
 }
 
 function TitleSection({ categoryName }: ToolsSectionProps) {
+    var formatCategory = categoryName.replace("%20", " ")
     return (
         <Flex
             justifyContent={'center'}>
@@ -61,7 +62,7 @@ function TitleSection({ categoryName }: ToolsSectionProps) {
                 marginBottom={'40px'}
                 textAlign={'center'}
                 fontWeight={700}>
-                {categoryName} Tools
+                {formatCategory} Tools
             </Text>
             <Image src="../icons/settings.png"
                 height={{ base: '40px', lg: '50px' }}
