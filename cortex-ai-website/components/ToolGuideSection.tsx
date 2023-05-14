@@ -73,6 +73,7 @@ export default function ToolGuideSection({ toolProps }: ToolGuideSectionProps) {
                             src={
                                 toolProps.imageLink
                             }
+                            objectFit={'contain'}
                             padding={{ base: 5, lg: 5 }}
                             height={{base: '200px',lg:'300px'}}
                         />
