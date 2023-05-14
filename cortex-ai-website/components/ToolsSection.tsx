@@ -52,7 +52,7 @@ export default function ToolsSection({ toolList, categoryName }: ToolsSectionPro
 }
 
 function TitleSection({ categoryName }: ToolsSectionProps) {
-    var formatCategory = categoryName.replace("%20", " ")
+    var formatCategory = categoryName.replaceAll("%20", " ")
     return (
         <Flex
             justifyContent={'center'}>
