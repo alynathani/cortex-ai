@@ -36,33 +36,33 @@ export default function HeroSection() {
           <Text color={'white'}
             fontWeight={{ base: '200', lg: '300' }}
             fontSize={{ base: '20px', md: '30px', lg: '35px' }}
-            >
+          >
             <strong>Cortex.AI</strong> is home to the popular AI Tools browser.  Search through our extensive library of cutting-edge AI Tools to find one that is for you.
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: 'column', sm: 'row' }}>
-              <Link href='/categories'>
+            <Link href='/categories'>
               <Button
-              rounded={'full'}
-              size={'lg'}
-              fontWeight={{ base: '900', lg: '700' }}
-              variant={'solid'}
-              px={10}
-              bg={'green.200'}
-              colorScheme={'green'}
-              width={'full'}
-              height={{ base: '50px' }}
-              fontSize={'20px'}
-              color={'black'}
-              _hover={{ bg: 'green.500' }}>
+                rounded={'full'}
+                size={'lg'}
+                fontWeight={{ base: '900', lg: '700' }}
+                variant={'solid'}
+                px={10}
+                bg={'green.200'}
+                colorScheme={'green'}
+                width={'full'}
+                height={{ base: '50px' }}
+                fontSize={'20px'}
+                color={'black'}
+                _hover={{ bg: 'green.500' }}>
                 Browse
-              <Image src="./icons/search.png"
-              height={'50%'}
-              marginLeft={'10px'}
-              ></Image>
-            </Button>
-              </Link>
+                <Image src="./icons/search.png"
+                  height={'50%'}
+                  marginLeft={'10px'}
+                ></Image>
+              </Button>
+            </Link>
             <Button
               height={{ base: '50px' }}
               rounded={'full'}
@@ -76,8 +76,8 @@ export default function HeroSection() {
               _hover={{ bg: 'blue.500' }}>
               Cortex Rankings
               <Image src="./icons/ranking.png"
-              height={'50%'}
-              marginLeft={'10px'}></Image>
+                height={'50%'}
+                marginLeft={'10px'}></Image>
             </Button>
           </Stack>
         </Stack>
@@ -95,59 +95,59 @@ export default function HeroSection() {
             width={'full'}
             overflow={'hidden'}
             bg={'gray.700'}>
-              <Box>
-            <Stack>
-              <Box
-              display={'flex'}
-              alignSelf={'center'}
-              >
-              <Text
-              textAlign={'center'}
-              color={'white'} 
-              pt={4}
-              fontSize={{ base: '25px', lg: '30px' }}
-              fontWeight={'500'}
-              textDecorationLine={'true'}
-              letterSpacing={'-1px'}>
-              Tools of the Week
-            </Text>
-            <Image src="./icons/star.png"
-            marginTop={{base:'15px', lg:'20px'}}
-              height={'40px'}
-              marginLeft={'15px'}
-              ></Image>
-              </Box>
-            <Text
-              textAlign={'center'}
-              color={'white'}
-              pt={1}
-              fontSize={{ base: '25px', lg: '30px' }}
-              fontWeight={'bold'}
-              textDecorationLine={'true'}
-              letterSpacing={'-1px'}>
-              #1: ChatGPT<br />
-              #2: Google Bard <br />
-              #3: MidJourney
-            </Text>
-            <Button
-              width={{base:'40%', lg: '20%'}}
-              alignSelf={'center'}
-              rounded={'full'}
-              fontWeight={{ base: '900', lg: '700' }}
-              variant={'solid'}            
-              bg={'white'}
-              height={{ base: '40px' }}
-              fontSize={{base:'15px'}}
-              color={'black'}
-              _hover={{ bg: 'green.500' }}>
-              Guides
-              <Image src="./icons/user-guide.png"
-              height={'50%'}
-              marginLeft={'10px'}
-              ></Image>
-            </Button>
-            </Stack>
-            </Box>            
+            <Box>
+              <Stack>
+                <Box
+                  display={'flex'}
+                  alignSelf={'center'}
+                >
+                  <Text
+                    textAlign={'center'}
+                    color={'white'}
+                    pt={4}
+                    fontSize={{ base: '25px', lg: '30px' }}
+                    fontWeight={'500'}
+                    textDecorationLine={'true'}
+                    letterSpacing={'-1px'}>
+                    Tools of the Week
+                  </Text>
+                  <Image src="./icons/star.png"
+                    marginTop={{ base: '15px', lg: '20px' }}
+                    height={'40px'}
+                    marginLeft={'15px'}
+                  ></Image>
+                </Box>
+                <Text
+                  textAlign={'center'}
+                  color={'white'}
+                  pt={1}
+                  fontSize={{ base: '25px', lg: '30px' }}
+                  fontWeight={'bold'}
+                  textDecorationLine={'true'}
+                  letterSpacing={'-1px'}>
+                  #1: ChatGPT<br />
+                  #2: Google Bard <br />
+                  #3: MidJourney
+                </Text>
+                <Button
+                  width={{ base: '40%', lg: '20%' }}
+                  alignSelf={'center'}
+                  rounded={'full'}
+                  fontWeight={{ base: '900', lg: '700' }}
+                  variant={'solid'}
+                  bg={'white'}
+                  height={{ base: '40px' }}
+                  fontSize={{ base: '15px' }}
+                  color={'black'}
+                  _hover={{ bg: 'green.500' }}>
+                  Guides
+                  <Image src="./icons/user-guide.png"
+                    height={'50%'}
+                    marginLeft={'10px'}
+                  ></Image>
+                </Button>
+              </Stack>
+            </Box>
           </Box>
         </Stack>
       </Stack>
@@ -170,7 +170,7 @@ const Slogan = () => {
           Work Smart
         </Text>
         <Image
-        boxShadow={'2xl'}
+          boxShadow={'2xl'}
           w={{ base: '14%', md: '20%', lg: '15%' }}
           h={{ base: '14%', md: '20%', lg: '15%' }}
           src={
