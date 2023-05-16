@@ -63,6 +63,7 @@ export default function HeroSection() {
                 ></Image>
               </Button>
             </Link>
+            <Link href='/rankings'>
             <Button
               height={{ base: '50px' }}
               rounded={'full'}
@@ -79,6 +80,7 @@ export default function HeroSection() {
                 height={'50%'}
                 marginLeft={'10px'}></Image>
             </Button>
+            </Link>
           </Stack>
         </Stack>
         <Stack
