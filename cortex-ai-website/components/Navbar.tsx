@@ -70,27 +70,7 @@ export default function WithSubnavigation() {
           justify={'flex-end'}
           direction={'row'}
           spacing={6}>
-          <Button
-            as={'a'}
-            fontSize={'sm'}
-            fontWeight={400}
-            variant={'link'}
-            href={'#'}>
-            Sign In
-          </Button>
-          <Button
-            as={'a'}
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
-            href={'#'}
-            _hover={{
-              bg: 'pink.300',
-            }}>
-            Sign Up
-          </Button>
+          
         </Stack>
       </Flex>
 
@@ -274,12 +254,12 @@ const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'Graphic Design',
         subLabel: 'Enhance your creativity with AI.',
-        href: '/categories',
+        href: '/tools/Image%20and%20Graphic%20Design',
       },
       {
         label: 'Professional and Business',
         subLabel: 'Time management, investment and more',
-        href: '/categories',
+        href: '/tools/Professional%20and%20Business',
       }
     ],
   },
@@ -287,14 +267,9 @@ const NAV_ITEMS: Array<NavItem> = [
     label: 'Rankings',
     children: [
       {
-        label: 'Our Picks',
-        subLabel: 'Tools which are simply amazing',
-        href: '#',
-      },
-      {
         label: 'Top 100',
         subLabel: 'Rated by users',
-        href: '#',
+        href: '/rankings',
       },
     ],
   },

@@ -42,23 +42,29 @@ export default function RankingsSection() {
                         mt={10}
                         
                     >
-                        AI Tool Rankings
+                        Cortex Rankings
 
                     </Text>
+                    
                     <Image src="./icons/ranking.png"
-                        height={'60px'}
+                        height={{base:'50px',lg:'60px'}}
                         ml={5}
                         
                         mr={{base: 4, lg: 0}}
+                        
+                        
                         mt={{ base: 8, lg: '50px' }}
                         rounded={'lg'}
-                        padding={2}
+                        p={{base: 1,lg:1}}
 
                         
                     ></Image>
                     
                 </Flex>
-            <Box margin={10}>
+                <Text color={'white'} textAlign={'center'}>
+                        Updated weekly, rankings based on user ratings.
+                    </Text>
+            <Box backgroundColor={'gray.700'} padding={{base: 0, lg:'16'}} mx={{base:2,lg:'32'}} my={{base: 6,lg:20}} border={'1px'} borderColor={'white'} borderRadius={'3xl'}>
             <TableSection />
 
             </Box>
@@ -75,10 +81,10 @@ function TableSection() {
                 <TableCaption color={'white'}>Top 50 AI Tools</TableCaption>
                 <Thead >
                     <Tr>
-                        <Th color={'white'} fontSize={'2xl'}>Ranking</Th>
-                        <Th color={'white'} fontSize={'2xl'}>Tool</Th>
-                        <Th color={'white'} fontSize={'2xl'} p={5}>Downloads</Th>
-                        <Th color={'white'} fontSize={'2xl'} p={5}>Guide</Th>
+                        <Th color={'white'} fontSize={{base:'1xl',lg:'2xl'}}>Ranking</Th>
+                        <Th color={'white'} fontSize={{base:'1xl',lg:'2xl'}}>Tool</Th>
+                        <Th color={'white'} fontSize={{base:'1xl',lg:'2xl'}} p={5}>Downloads</Th>
+                        <Th color={'white'} fontSize={{base:'1xl',lg:'2xl'}} p={5}>Guide</Th>
                     </Tr>
                 </Thead>
                 <Tbody >

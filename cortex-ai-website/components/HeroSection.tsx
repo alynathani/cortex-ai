@@ -71,6 +71,7 @@ export default function HeroSection() {
               colorScheme={'blue'}
               fontSize={'20px'}
               color={'black'}
+              width={'full'}
               bg={'blue.200'}
               fontWeight={{ base: '600', lg: '600' }}
               px={6}
@@ -91,7 +92,7 @@ export default function HeroSection() {
           w={'full'}>
           <Box
             position={'relative'}
-            height={'300px'}
+            height={{base:'200px', lg: '250px'}}
             rounded={'2xl'}
             boxShadow={'2xl'}
             width={'full'}
@@ -131,23 +132,7 @@ export default function HeroSection() {
                   #2: Google Bard <br />
                   #3: MidJourney
                 </Text>
-                <Button
-                  width={{ base: '40%', lg: '20%' }}
-                  alignSelf={'center'}
-                  rounded={'full'}
-                  fontWeight={{ base: '900', lg: '700' }}
-                  variant={'solid'}
-                  bg={'white'}
-                  height={{ base: '40px' }}
-                  fontSize={{ base: '15px' }}
-                  color={'black'}
-                  _hover={{ bg: 'green.500' }}>
-                  Guides
-                  <Image src="./icons/user-guide.png"
-                    height={'50%'}
-                    marginLeft={'10px'}
-                  ></Image>
-                </Button>
+                
               </Stack>
             </Box>
           </Box>
