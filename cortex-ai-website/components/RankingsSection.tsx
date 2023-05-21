@@ -118,13 +118,13 @@ function TableSection({ toolArray }: RankingsSectionTypes) {
             <Tr key={tool.id}>
               <Td>#{index + 1}</Td>
               <Td>
-                <Flex>
+                <Flex display={"table-row"}>
                   <Text mt={4}>{tool.name}</Text>
 
                   <Image
                     height={"50px"}
                     rounded={"lg"}
-                    ml={5}
+                    mt={5}
                     p={2}
                     bgColor={"white"}
                     src={`${tool.imageLink}`}
