@@ -1,28 +1,29 @@
-import { get } from "http"
-import CategoriesSection from "@/components/CategoriesSection"
-import { cache } from "react"
+import { get } from "http";
+import CategoriesSection from "@/components/CategoriesSection";
+import { cache } from "react";
 
 export const metadata = {
-  title: 'Cortex AI - Browse'
-}
+  title: "Cortex AI - Browse",
+};
 
 async function getCategories() {
-  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, {cache:'default'})
-  const jsonData = await res.json()
+  const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, {
+    cache: "default",
+  });
+  const jsonData = await res.json();
 
   if (!res.ok) {
     console.log(res);
   }
-  return jsonData
+  return jsonData;
 }
 
 export default async function Home() {
-  const categoryList = await getCategories()
+  const categoryList = await getCategories();
 
   return (
-
     <div style={{ padding: "50px" }}>
       <CategoriesSection categoryList={categoryList} />
     </div>
-  )
+  );
 }
