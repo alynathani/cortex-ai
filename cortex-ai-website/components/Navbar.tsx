@@ -256,15 +256,16 @@ const NAV_ITEMS: Array<NavItem> = [
         href: "/tools/Education",
       },
       {
-        label: "Graphic Design",
-        subLabel: "Enhance your creativity with AI.",
-        href: "/tools/Image%20and%20Graphic%20Design",
-      },
-      {
         label: "Professional and Business",
         subLabel: "Time management, investment and more",
         href: "/tools/Professional%20and%20Business",
       },
+      {
+        label: "Image and Graphic Design",
+        subLabel: "Enhance your creativity with AI.",
+        href: "/tools/Image%20and%20Graphic%20Design",
+      },
+      
     ],
   },
   {
@@ -278,15 +279,11 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: "Cortex Vision",
-    href: "#",
-  },
-  {
     label: "Social Media",
     href: "/social-media",
   },
   {
     label: "Contact Us",
-    href: "#",
+    href: "/contact",
   },
 ];
