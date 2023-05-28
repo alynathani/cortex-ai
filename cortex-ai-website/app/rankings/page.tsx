@@ -32,7 +32,7 @@ async function getTools() {
 }
 
 export default async function Home() {
-  const toolList = await getTools();
+  // const toolList = await getTools();
 
   return (
     <>
