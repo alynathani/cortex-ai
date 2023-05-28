@@ -36,7 +36,7 @@ export default async function Home() {
 
   return (
     <>
-      <RankingsSection toolArray={toolList} />
+      <h1>Omglol</h1>
     </>
   );
 }
