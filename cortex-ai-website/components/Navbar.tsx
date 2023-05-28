@@ -283,7 +283,7 @@ const NAV_ITEMS: Array<NavItem> = [
   },
   {
     label: "Social Media",
-    href: "#",
+    href: "/social-media",
   },
   {
     label: "Contact Us",
