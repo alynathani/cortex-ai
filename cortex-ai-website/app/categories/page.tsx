@@ -10,16 +10,14 @@ type categoryProps = {
   id: number,
   name: string,
   description: string
-}
+}[]
 
 async function getCategories():Promise<categoryProps> {
   const res = await fetch(`${process.env.BASE_URL}/api/getCategories`, {cache:'no-store'})
-  const jsonData = await res.json()
-
   if (!res.ok) {
     console.log(res);
   }
-  return jsonData
+return res.json()
 }
 
 export default async function Home() {
