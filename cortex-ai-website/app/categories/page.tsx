@@ -2,10 +2,6 @@ import { get } from "http"
 import CategoriesSection from "@/components/CategoriesSection"
 import { cache } from "react"
 
-export const metadata = {
-  title: 'Cortex AI - Browse'
-}
-
 type categoryProps = {
   id: number,
   name: string,
@@ -26,7 +22,7 @@ export default async function Home() {
   return (
 
     <div style={{ padding: "50px" }}>
-      <CategoriesSection categoryList={categoryList} />
+      {/*<CategoriesSection categoryList={categoryList}/>*/}
     </div>
   )
 }
