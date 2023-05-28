@@ -19,7 +19,7 @@ type toolListProps = {
   videoLink: string;
 }[];
 
-async function getTools() {
+async function getAllTools() {
   const res = await fetch(`${process.env.BASE_URL}/api/getAllTools`, {
     cache: "no-store",
   });
@@ -32,7 +32,7 @@ async function getTools() {
 }
 
 export default async function Home() {
-  // const toolList = await getTools();
+  const toolList = await getAllTools();
 
   return (
     <>
