@@ -23,10 +23,12 @@ async function getTools() {
   const res = await fetch(`${process.env.BASE_URL}/api/getAllTools`, {
     cache: "no-store",
   });
+  const jsonData = await res.json()
+
   if (!res.ok) {
     console.log(res);
   }
-  return res.json();
+  return jsonData
 }
 
 export default async function Home() {

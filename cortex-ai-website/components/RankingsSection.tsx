@@ -42,10 +42,10 @@ type toolProps = {
   downloads: number;
   imageLink: string;
   videoLink: string;
-}[];
+}
 
 type RankingsSectionTypes = {
-  toolArray: toolProps;
+  toolArray: toolProps[]
 };
 
 export default function RankingsSection({ toolArray }: RankingsSectionTypes) {
