@@ -21,7 +21,7 @@ type toolListProps = {
 
 async function getTools() {
   const res = await fetch(`${process.env.BASE_URL}/api/getAllTools`, {
-    cache: "default",
+    cache: "no-store",
   });
   const jsonData = await res.json()
 
